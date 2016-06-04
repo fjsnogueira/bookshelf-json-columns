@@ -31,7 +31,7 @@ describe('with PostgreSQL client', () => {
     await dropTable(repository);
   });
 
-  describe.skip('if a json column is not registered', () => {
+  describe.only('if a json column is not registered', () => {
     const Model = repository.Model.extend({ tableName: 'test' });
 
     it('should throw an error on create', async () => {
