@@ -4,7 +4,6 @@
  */
 
 function stringify() {
-  console.log('stringify');
   this.jsonColumns.forEach(column => {
     if (this.attributes[column]) {
       this.attributes[column] = JSON.stringify(this.attributes[column]);
@@ -17,7 +16,6 @@ function stringify() {
  */
 
 function parse() {
-  console.log('parse');
   this.jsonColumns.forEach(column => {
     if (this.attributes[column]) {
       this.attributes[column] = JSON.parse(this.attributes[column]);
@@ -36,8 +34,11 @@ export default Bookshelf => {
   Bookshelf.Model = Bookshelf.Model.extend({
     initialize() {
       if (!this.jsonColumns) {
+        console.log('foo');
         return Model.initialize.apply(this, arguments);
       }
+
+      console.log('bar');
 
       // Stringify JSON columns before model is saved.
       this.on('saving', stringify.bind(this));
