@@ -25,7 +25,7 @@
   ],
   "options": {
     "isparta": "--dir test/coverage",
-    "mocha": "--compilers js:babel/register --bail --require should test"
+    "mocha": "--compilers js:babel/register --bail test"
   },
   "scripts": {
     "build": "rm -rf dist/* && ./node_modules/.bin/babel src/ --out-dir dist/",

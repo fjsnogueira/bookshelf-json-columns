@@ -9,5 +9,6 @@ export default {
     charset: 'utf8',
     database: 'bookshelf-json-columns',
     host: 'localhost'
-  }
+  },
+  debug: true
 };

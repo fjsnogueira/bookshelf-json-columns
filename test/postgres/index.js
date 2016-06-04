@@ -31,12 +31,12 @@ describe('with PostgreSQL client', () => {
     await dropTable(repository);
   });
 
-  describe.only('if a json column is not registered', () => {
+  describe('if a json column is not registered', () => {
     const Model = repository.Model.extend({ tableName: 'test' });
 
-    it('should throw an error on create', async () => {
+    it.only('should throw an error on create', async () => {
       try {
-        const model = await Model.forge().save({ foo: ['bar'] });
+        const model = await Model.forge().save({ foo: [{ qux: 'qix'}] });
 
         console.log(model.toJSON());
 
