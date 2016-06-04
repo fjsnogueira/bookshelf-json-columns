@@ -21,6 +21,8 @@ export default Bookshelf => {
         });
       });
 
+
+
       // Parse JSON columns after saving.
       this.on('saved', () => {
         this.jsonColumns.forEach(column => {
